@@ -20,7 +20,7 @@ mkdir -p catkin_ws/src
 
 ln -s RND_03_project/my_robot ./catkin_ws/src/my_robot
 ln -s RND_03_project/teleop_twist_keyboard ./catkin_ws/src/teleop_twist_keyboard
-ln -s RND_03_project/run_all.launch ./catkin_ws/ln -s RND_03_project/
+ln -s RND_03_project/run_all.launch ./catkin_ws/run_all.launch
 
 cd catkin_ws/src && catkin_init_workspace
 cd .. && catkin_make
