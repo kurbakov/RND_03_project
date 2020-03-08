@@ -6,10 +6,15 @@
 
 Install dependencies:
 ```
-sudo apt-get install ros-kinetic-navigation
-sudo apt-get install ros-kinetic-map-server
-sudo apt-get install ros-kinetic-move-base
-sudo apt-get install ros-kinetic-amcl
+sudo apt install ros-melodic-teleop-twist-keyboard
+sudo apt install ros-melodic-joint-state
+sudo apt install ros-melodic-dynamic-robot-state-publisher-publisher
+sudo apt install ros-melodic-xacro
+
+sudo apt install ros-melodic-navigation
+sudo apt install ros-melodic-map-server
+sudo apt install ros-melodic-move-base
+sudo apt install ros-melodic-amcl
 ```
 
 To run the simulation:
@@ -18,12 +23,13 @@ cd ~
 git clone https://github.com/kurbakov/RND_03_project.git
 mkdir -p catkin_ws/src
 
-ln -s RND_03_project/my_robot ./catkin_ws/src/my_robot
-ln -s RND_03_project/teleop_twist_keyboard ./catkin_ws/src/teleop_twist_keyboard
-ln -s RND_03_project/run_all.launch ./catkin_ws/run_all.launch
-
 cd catkin_ws/src && catkin_init_workspace
-cd .. && catkin_make
+ln -s ../../RND_03_project/my_robot .
+ln -s ../../RND_03_project/teleop_twist_keyboard .
+
+cd ..
+ln -s ../RND_03_project/run_all.launch .
+catkin_make
 source devel/setup.bash
 roslaunch run_all.launch
 ```
